@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_example_domain_WorkingModel" object="${workingmodel}" path="/workingmodels" z="NfLZ/+5oio+FkLvroInTNlIfR4s=">
+        <field:display field="modelId" id="s_example_domain_WorkingModel_modelId" object="${workingmodel}" z="r0TgZ2uIKtCGU60ObIcxjKkQP7w="/>
+        <field:display field="name" id="s_example_domain_WorkingModel_name" object="${workingmodel}" z="qxXtmkNyCWlyTgkPdJwTiOqmdV8="/>
+        <field:display field="initialItem" id="s_example_domain_WorkingModel_initialItem" object="${workingmodel}" z="JLxjVX/MSx7KzT3AM5v7ZVwV6nM="/>
+        <field:display field="selectedItem" id="s_example_domain_WorkingModel_selectedItem" object="${workingmodel}" z="lqeosjDCuUZyDbzt2ZUvNMqKJzA="/>
+    </page:show>
+</div>
