@@ -23,8 +23,8 @@ public class WorkingModelController {
         uiModel.addAttribute("itemId", id);
         
         String sql = "SELECT ii, "
-        		+ "CASE WHEN EXISTS (SELECT si FROM WorkingModel wm JOIN wm.selectedItem si WHERE wm.modelId = :modelId AND ii.id = si.id) THEN '1' "
-        		+ "ELSE '0' END "
+        		+ "CASE WHEN EXISTS (SELECT si FROM WorkingModel wm JOIN wm.selectedItem si WHERE wm.modelId = :modelId AND ii.id = si.id) THEN true "
+        		+ "ELSE false END "
         		+ "FROM WorkingModel wm JOIN wm.initialItem ii WHERE wm.modelId = :modelId";
         List<?> list = WorkingModel.getData(sql, model.getModelId());
 

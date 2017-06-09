@@ -4,6 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_example_domain_Item" modelAttribute="item" path="/items" render="${empty dependencies}" z="WxPhcHXhSyuuHmnKQm6PQ/NuyGQ=">
         <field:input field="name" id="c_example_domain_Item_name" required="true" z="i4xqupNirvlUyxkOT37L+PAQj7c="/>
+        <field:select field="belonging" id="c_example_domain_Item_belonging" itemValue="id" items="${itemgroups}" multiple="true" path="/itemgroups" z="/shmqS+It4DtIguvLSx9cASxtoc="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_example_domain_Item" render="${not empty dependencies}" z="pbRdvypH7GkeFmp0HJL/ZjR/Apc="/>
 </div>

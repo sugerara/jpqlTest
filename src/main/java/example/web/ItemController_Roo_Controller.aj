@@ -4,6 +4,7 @@
 package example.web;
 
 import example.domain.Item;
+import example.domain.ItemGroup;
 import example.web.ItemController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -86,6 +87,7 @@ privileged aspect ItemController_Roo_Controller {
     
     void ItemController.populateEditForm(Model uiModel, Item item) {
         uiModel.addAttribute("item", item);
+        uiModel.addAttribute("itemgroups", ItemGroup.findAllItemGroups());
     }
     
     String ItemController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

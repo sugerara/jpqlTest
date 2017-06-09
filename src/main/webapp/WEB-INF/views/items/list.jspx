@@ -5,6 +5,7 @@
     <page:list id="pl_example_domain_Item" items="${items}" z="JvwkXLpf4FKBz+AcfMfehlZ1ymY=">
         <table:table data="${items}" id="l_example_domain_Item" path="/items" z="fRvFUbFMeg3uS2ShDtPOIQO5+Uk=">
             <table:column id="c_example_domain_Item_name" property="name" z="v4YCHBYx0Rm4B7+qwP5UqEpJ86M="/>
+            <table:column id="c_example_domain_Item_belonging" property="belonging" z="oxg16/mSJXIWSsY3HUvLqcfOodA="/>
         </table:table>
     </page:list>
 </div>

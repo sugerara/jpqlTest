@@ -4,6 +4,7 @@
 package example.web;
 
 import example.domain.Item;
+import example.domain.ItemGroup;
 import example.domain.WorkingModel;
 import example.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -38,6 +39,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<ItemGroup, String> ApplicationConversionServiceFactoryBean.getItemGroupToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<example.domain.ItemGroup, java.lang.String>() {
+            public String convert(ItemGroup itemGroup) {
+                return new StringBuilder().append(itemGroup.getName()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, ItemGroup> ApplicationConversionServiceFactoryBean.getIdToItemGroupConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, example.domain.ItemGroup>() {
+            public example.domain.ItemGroup convert(java.lang.Long id) {
+                return ItemGroup.findItemGroup(id);
+            }
+        };
+    }
+    
+    public Converter<String, ItemGroup> ApplicationConversionServiceFactoryBean.getStringToItemGroupConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, example.domain.ItemGroup>() {
+            public example.domain.ItemGroup convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), ItemGroup.class);
+            }
+        };
+    }
+    
     public Converter<WorkingModel, String> ApplicationConversionServiceFactoryBean.getWorkingModelToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<example.domain.WorkingModel, java.lang.String>() {
             public String convert(WorkingModel workingModel) {
@@ -66,6 +91,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getItemToStringConverter());
         registry.addConverter(getIdToItemConverter());
         registry.addConverter(getStringToItemConverter());
+        registry.addConverter(getItemGroupToStringConverter());
+        registry.addConverter(getIdToItemGroupConverter());
+        registry.addConverter(getStringToItemGroupConverter());
         registry.addConverter(getWorkingModelToStringConverter());
         registry.addConverter(getIdToWorkingModelConverter());
         registry.addConverter(getStringToWorkingModelConverter());

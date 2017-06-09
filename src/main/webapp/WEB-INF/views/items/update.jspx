@@ -4,5 +4,6 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_example_domain_Item" modelAttribute="item" path="/items" versionField="Version" z="V8ZVazf0CAp0NSmR2yLjgqzSmIw=">
         <field:input field="name" id="c_example_domain_Item_name" required="true" z="i4xqupNirvlUyxkOT37L+PAQj7c="/>
+        <field:select field="belonging" id="c_example_domain_Item_belonging" itemValue="id" items="${itemgroups}" multiple="true" path="/itemgroups" z="/shmqS+It4DtIguvLSx9cASxtoc="/>
     </form:update>
 </div>

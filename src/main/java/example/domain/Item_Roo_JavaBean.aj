@@ -4,6 +4,8 @@
 package example.domain;
 
 import example.domain.Item;
+import example.domain.ItemGroup;
+import java.util.Set;
 
 privileged aspect Item_Roo_JavaBean {
     
@@ -13,6 +15,14 @@ privileged aspect Item_Roo_JavaBean {
     
     public void Item.setName(String name) {
         this.name = name;
+    }
+    
+    public Set<ItemGroup> Item.getBelonging() {
+        return this.belonging;
+    }
+    
+    public void Item.setBelonging(Set<ItemGroup> belonging) {
+        this.belonging = belonging;
     }
     
 }

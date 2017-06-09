@@ -3,97 +3,97 @@
 
 package example.domain;
 
-import example.domain.Item;
+import example.domain.ItemGroup;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Item_Roo_Jpa_ActiveRecord {
+privileged aspect ItemGroup_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Item.entityManager;
+    transient EntityManager ItemGroup.entityManager;
     
-    public static final List<String> Item.fieldNames4OrderClauseFilter = java.util.Arrays.asList("name", "belonging");
+    public static final List<String> ItemGroup.fieldNames4OrderClauseFilter = java.util.Arrays.asList("name");
     
-    public static final EntityManager Item.entityManager() {
-        EntityManager em = new Item().entityManager;
+    public static final EntityManager ItemGroup.entityManager() {
+        EntityManager em = new ItemGroup().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Item.countItems() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Item o", Long.class).getSingleResult();
+    public static long ItemGroup.countItemGroups() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM ItemGroup o", Long.class).getSingleResult();
     }
     
-    public static List<Item> Item.findAllItems() {
-        return entityManager().createQuery("SELECT o FROM Item o", Item.class).getResultList();
+    public static List<ItemGroup> ItemGroup.findAllItemGroups() {
+        return entityManager().createQuery("SELECT o FROM ItemGroup o", ItemGroup.class).getResultList();
     }
     
-    public static List<Item> Item.findAllItems(String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Item o";
+    public static List<ItemGroup> ItemGroup.findAllItemGroups(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM ItemGroup o";
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
                 jpaQuery = jpaQuery + " " + sortOrder;
             }
         }
-        return entityManager().createQuery(jpaQuery, Item.class).getResultList();
+        return entityManager().createQuery(jpaQuery, ItemGroup.class).getResultList();
     }
     
-    public static Item Item.findItem(Long id) {
+    public static ItemGroup ItemGroup.findItemGroup(Long id) {
         if (id == null) return null;
-        return entityManager().find(Item.class, id);
+        return entityManager().find(ItemGroup.class, id);
     }
     
-    public static List<Item> Item.findItemEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Item o", Item.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<ItemGroup> ItemGroup.findItemGroupEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM ItemGroup o", ItemGroup.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
-    public static List<Item> Item.findItemEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Item o";
+    public static List<ItemGroup> ItemGroup.findItemGroupEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM ItemGroup o";
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
                 jpaQuery = jpaQuery + " " + sortOrder;
             }
         }
-        return entityManager().createQuery(jpaQuery, Item.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+        return entityManager().createQuery(jpaQuery, ItemGroup.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional
-    public void Item.persist() {
+    public void ItemGroup.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Item.remove() {
+    public void ItemGroup.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Item attached = Item.findItem(this.id);
+            ItemGroup attached = ItemGroup.findItemGroup(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Item.flush() {
+    public void ItemGroup.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Item.clear() {
+    public void ItemGroup.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Item Item.merge() {
+    public ItemGroup ItemGroup.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Item merged = this.entityManager.merge(this);
+        ItemGroup merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
