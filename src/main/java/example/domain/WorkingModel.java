@@ -1,15 +1,17 @@
 package example.domain;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
-import org.springframework.roo.addon.tostring.RooToString;
-import javax.persistence.Column;
-import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.ManyToMany;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
+import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
@@ -37,10 +39,10 @@ public class WorkingModel {
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Item> selectedItem = new HashSet<Item>();
     
-    public static List<?> getData(String sql, Integer id) {
-    	Query query = entityManager().createQuery(sql);
-    	query.setParameter("modelId", id);
-    	List<?> list = query.getResultList();
+    public static <T> List<T> getData(String sql, Class<T> clazz, Object arg) {
+    	TypedQuery<T> query = entityManager().createQuery(sql, clazz);
+    	query.setParameter("modelId", arg);
+    	List<T> list = query.getResultList();
     	return list;
     }
 }
