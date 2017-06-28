@@ -20,17 +20,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect WorkingModelController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String WorkingModelController.create(@Valid WorkingModel workingModel, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, workingModel);
-            return "workingmodels/create";
-        }
-        uiModel.asMap().clear();
-        workingModel.persist();
-        return "redirect:/workingmodels/" + encodeUrlPathSegment(workingModel.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", produces = "text/html")
     public String WorkingModelController.createForm(Model uiModel) {
         populateEditForm(uiModel, new WorkingModel());

@@ -41,4 +41,12 @@ privileged aspect WorkingModel_Roo_JavaBean {
         this.selectedItem = selectedItem;
     }
     
+    public int WorkingModel.getInfoType() {
+        return this.infoType;
+    }
+    
+    public void WorkingModel.setInfoType(int infoType) {
+        this.infoType = infoType;
+    }
+    
 }

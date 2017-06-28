@@ -7,5 +7,6 @@
         <field:display field="name" id="s_example_domain_WorkingModel_name" object="${workingmodel}" z="qxXtmkNyCWlyTgkPdJwTiOqmdV8="/>
         <field:display field="initialItem" id="s_example_domain_WorkingModel_initialItem" object="${workingmodel}" z="JLxjVX/MSx7KzT3AM5v7ZVwV6nM="/>
         <field:display field="selectedItem" id="s_example_domain_WorkingModel_selectedItem" object="${workingmodel}" z="lqeosjDCuUZyDbzt2ZUvNMqKJzA="/>
+        <field:display field="infoType" id="s_example_domain_WorkingModel_infoType" object="${workingmodel}" z="3Vy7Q5tliHzUnDagKbFtZBk95Oo="/>
     </page:show>
 </div>

@@ -66,7 +66,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<WorkingModel, String> ApplicationConversionServiceFactoryBean.getWorkingModelToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<example.domain.WorkingModel, java.lang.String>() {
             public String convert(WorkingModel workingModel) {
-                return new StringBuilder().append(workingModel.getModelId()).append(' ').append(workingModel.getName()).toString();
+                return new StringBuilder().append(workingModel.getModelId()).append(' ').append(workingModel.getName()).append(' ').append(workingModel.getInfoType()).toString();
             }
         };
     }

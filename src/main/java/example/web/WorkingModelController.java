@@ -1,12 +1,14 @@
 package example.web;
 import java.util.List;
-
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestMethod;
 import example.data.DisplayItem;
 import example.domain.ItemGroup;
 import example.domain.WorkingModel;
@@ -53,5 +55,17 @@ public class WorkingModelController {
 //		}
         
         return "workingmodels/show";
+    }
+
+	@RequestMapping(method = RequestMethod.POST, produces = "text/html")
+    public String create(@Valid WorkingModel workingModel, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            populateEditForm(uiModel, workingModel);
+            return "workingmodels/create";
+        }
+        System.out.println("create:infoType = " + workingModel.getInfoType());
+        uiModel.asMap().clear();
+        workingModel.persist();
+        return "redirect:/workingmodels/" + encodeUrlPathSegment(workingModel.getId().toString(), httpServletRequest);
     }
 }
