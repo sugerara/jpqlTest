@@ -8,5 +8,7 @@
         <field:display field="initialItem" id="s_example_domain_WorkingModel_initialItem" object="${workingmodel}" z="JLxjVX/MSx7KzT3AM5v7ZVwV6nM="/>
         <field:display field="selectedItem" id="s_example_domain_WorkingModel_selectedItem" object="${workingmodel}" z="lqeosjDCuUZyDbzt2ZUvNMqKJzA="/>
         <field:display field="infoType" id="s_example_domain_WorkingModel_infoType" object="${workingmodel}" z="3Vy7Q5tliHzUnDagKbFtZBk95Oo="/>
+        <field:display field="anoTran" id="s_example_domain_WorkingModel_anoTran" object="${workingmodel}" z="q4KQQwCC7ruvBDOQ1x+u8YY/Y34="/>
+        <field:display field="noTran" id="s_example_domain_WorkingModel_noTran" object="${workingmodel}" z="ZJeRCGLiEZVHlf0IoxIIdZjJMqs="/>
     </page:show>
 </div>

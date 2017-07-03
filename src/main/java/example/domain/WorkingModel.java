@@ -47,6 +47,18 @@ public class WorkingModel {
 
     /**
      */
-    @Transient
     private int infoType;
+
+    /**
+     */
+    private transient int tran;
+
+    /**
+     */
+    @Transient
+    private int anoTran;
+
+    /**
+     */
+    private int noTran;
 }

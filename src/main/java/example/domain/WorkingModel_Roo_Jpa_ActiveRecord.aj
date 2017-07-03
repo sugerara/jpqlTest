@@ -14,7 +14,7 @@ privileged aspect WorkingModel_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager WorkingModel.entityManager;
     
-    public static final List<String> WorkingModel.fieldNames4OrderClauseFilter = java.util.Arrays.asList("modelId", "name", "initialItem", "selectedItem", "infoType");
+    public static final List<String> WorkingModel.fieldNames4OrderClauseFilter = java.util.Arrays.asList("modelId", "name", "initialItem", "selectedItem", "infoType", "tran", "anoTran", "noTran");
     
     public static final EntityManager WorkingModel.entityManager() {
         EntityManager em = new WorkingModel().entityManager;

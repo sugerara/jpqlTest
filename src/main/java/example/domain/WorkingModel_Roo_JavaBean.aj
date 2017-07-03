@@ -49,4 +49,20 @@ privileged aspect WorkingModel_Roo_JavaBean {
         this.infoType = infoType;
     }
     
+    public int WorkingModel.getAnoTran() {
+        return this.anoTran;
+    }
+    
+    public void WorkingModel.setAnoTran(int anoTran) {
+        this.anoTran = anoTran;
+    }
+    
+    public int WorkingModel.getNoTran() {
+        return this.noTran;
+    }
+    
+    public void WorkingModel.setNoTran(int noTran) {
+        this.noTran = noTran;
+    }
+    
 }

@@ -53,3 +53,11 @@ field number --fieldName infoType --type int --transient
 // Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2017-06-28 22:15:55
 focus --class ~.domain.WorkingModel
 field number --fieldName infoType --type int
+exit
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2017-06-28 23:36:47
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2017-06-29 18:50:52
+focus --class ~.domain.WorkingModel
+field number --fieldName tran --type int --transient 
+field number --fieldName anoTran --type int
+field number --fieldName noTran --type int
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2017-06-29 23:49:35

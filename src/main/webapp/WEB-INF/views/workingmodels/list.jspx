@@ -9,6 +9,7 @@
             <table:column id="c_example_domain_WorkingModel_initialItem" property="initialItem" z="+tn50UMBPw8Iiiw+b+J4heEj6FQ="/>
             <table:column id="c_example_domain_WorkingModel_selectedItem" property="selectedItem" z="xuyDnxjF+a1mgyupvrWw9uHswi8="/>
             <table:column id="c_example_domain_WorkingModel_infoType" property="infoType" z="vsfrNGZxNADA3I3FhNXmVDRD8k4="/>
+            <table:column id="c_example_domain_WorkingModel_anoTran" property="anoTran" z="9lK6QS2IWx4SbGmun5FaxZ9emGw="/>
         </table:table>
     </page:list>
 </div>

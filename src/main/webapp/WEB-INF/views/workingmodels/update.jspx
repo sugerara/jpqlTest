@@ -8,5 +8,7 @@
         <field:select field="initialItem" id="c_example_domain_WorkingModel_initialItem" itemValue="id" items="${items}" multiple="true" path="/items" z="LJRNJsXk+ed1eQOvKSZYLgRA0T4="/>
         <field:select field="selectedItem" id="c_example_domain_WorkingModel_selectedItem" itemValue="id" items="${items}" multiple="true" path="/items" z="ck7wL3J2hl++w/Sa9L36UfWuQwc="/>
         <field:input field="infoType" id="c_example_domain_WorkingModel_infoType" z="85Ax+YR8B5bAD4BHhuF/aF3Wbj4="/>
+        <field:input field="anoTran" id="c_example_domain_WorkingModel_anoTran" z="A3n9tnTTxSg8W9/zkDUmZTWn6SI="/>
+        <field:input field="noTran" id="c_example_domain_WorkingModel_noTran" z="TmE2oL4Kv8TQCeCBdsyRaOapyfw="/>
     </form:update>
 </div>

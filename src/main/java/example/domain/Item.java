@@ -20,6 +20,7 @@ public class Item {
 
     /**
      */
-    @ManyToMany(cascade = CascadeType.ALL)
+    //@ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     private Set<ItemGroup> belonging = new HashSet<ItemGroup>();
 }

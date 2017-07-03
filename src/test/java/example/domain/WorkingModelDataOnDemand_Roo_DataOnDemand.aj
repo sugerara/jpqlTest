@@ -24,9 +24,16 @@ privileged aspect WorkingModelDataOnDemand_Roo_DataOnDemand {
     
     public WorkingModel WorkingModelDataOnDemand.getNewTransientWorkingModel(int index) {
         WorkingModel obj = new WorkingModel();
+        setInfoType(obj, index);
         setModelId(obj, index);
         setName(obj, index);
+        setNoTran(obj, index);
         return obj;
+    }
+    
+    public void WorkingModelDataOnDemand.setInfoType(WorkingModel obj, int index) {
+        int infoType = index;
+        obj.setInfoType(infoType);
     }
     
     public void WorkingModelDataOnDemand.setModelId(WorkingModel obj, int index) {
@@ -37,6 +44,11 @@ privileged aspect WorkingModelDataOnDemand_Roo_DataOnDemand {
     public void WorkingModelDataOnDemand.setName(WorkingModel obj, int index) {
         String name = "name_" + index;
         obj.setName(name);
+    }
+    
+    public void WorkingModelDataOnDemand.setNoTran(WorkingModel obj, int index) {
+        int noTran = index;
+        obj.setNoTran(noTran);
     }
     
     public WorkingModel WorkingModelDataOnDemand.getSpecificWorkingModel(int index) {
